@@ -1,0 +1,14 @@
+.loginContainer {
+  height: 400px;
+  width: 400px;
+  background: wheat;
+  border-radius: 10px;
+}
+
+.loginHeader {
+  width: 100%;
+  background: #363795;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}

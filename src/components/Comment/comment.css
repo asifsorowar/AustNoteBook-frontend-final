@@ -1,0 +1,22 @@
+.comment {
+  padding: 15px !important;
+  text-align: center;
+  background: #a6dcef;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.message {
+  margin-top: 10px;
+  margin-left: 35px;
+  border-radius: 8px;
+  padding: 10px !important;
+}
+
+.deleteButton:hover {
+  color: red;
+}
+
+p {
+  margin: 0 !important;
+}

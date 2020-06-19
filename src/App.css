@@ -1,0 +1,63 @@
+/* scroll-bar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#21bf73, #38ef7d);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#005c97, #363795);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  overflow-x: hidden;
+  background: linear-gradient(#0f2027, #203a43, #2c5364);
+  font-family: "Roboto", sans-serif !important;
+}
+
+.myContainer {
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.leftContainer {
+  height: calc(100);
+  background: linear-gradient(#21bf73, #38ef7d);
+}
+
+/* .rightContainer {
+  height: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+} */
+
+.myCard:hover {
+  color: white !important;
+  background: #61f399;
+}
+
+.myNavbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
