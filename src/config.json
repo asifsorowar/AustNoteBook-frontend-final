@@ -1,4 +1,3 @@
 {
-  "apiUrl": "http://localhost:5000/api",
   "profilePictureUrl": "http://localhost:5000/profile_picture"
 }

@@ -40,7 +40,11 @@ const Navbar = ({ user }) => {
                 <li className="nav-item d-flex ml-3 align-items-center">
                   <Avatar
                     alt="Remy Sharp"
-                    src={process.env.PROFILE_PICTURE_URL + "/" + user.photo}
+                    src={
+                      process.env.REACT_APP_PROFILE_PICTURE_URL +
+                      "/" +
+                      user.photo
+                    }
                   />
                   <NavLink to="/profile" className="nav-link">
                     {user.varsityId}

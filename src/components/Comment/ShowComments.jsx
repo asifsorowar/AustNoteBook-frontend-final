@@ -13,7 +13,7 @@ const ShowComments = ({ comments, deleteButton, handleDelete }) => {
               <Avatar
                 alt="Remy Sharp"
                 src={
-                  process.env.PROFILE_PICTURE_URL +
+                  process.env.REACT_APP_PROFILE_PICTURE_URL +
                   "/" +
                   _.get(comment, "user.photo")
                 }

@@ -44,7 +44,9 @@ class Profile extends Component {
               <div>
                 <img
                   src={
-                    process.env.PROFILE_PICTURE_URL + "/" + _.get(user, "photo")
+                    process.env.REACT_APP_PROFILE_PICTURE_URL +
+                    "/" +
+                    _.get(user, "photo")
                   }
                   className="rounded mx-auto d-block rounded-circle w-25 h-25"
                   alt="..."
