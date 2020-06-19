@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import _ from "lodash";
 import FadeIn from "react-fade-in";
 import MyTable from "../common/Table";
 import DeleteButton from "../common/DeleteButton";
@@ -12,7 +13,7 @@ class QuestionTable extends Component {
       path: "name",
       content: (question) => {
         if (
-          question.user._id === getCurrentUser()._id ||
+          _.get(question, "user._id") === getCurrentUser()._id ||
           getCurrentUser().isAdmin
         )
           return (
@@ -43,7 +44,7 @@ class QuestionTable extends Component {
   deleteColumn = {
     key: "delete",
     content: (question) =>
-      (question.user._id === getCurrentUser()._id ||
+      (_.get(question, "user._id") === getCurrentUser()._id ||
         getCurrentUser().isAdmin) && (
         <DeleteButton
           handleClick={() => this.props.onDelete(question)}

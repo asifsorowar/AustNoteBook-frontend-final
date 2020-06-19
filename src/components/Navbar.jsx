@@ -1,8 +1,19 @@
 import React from "react";
+import _ from "lodash";
 import { NavLink } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 
 const Navbar = ({ user }) => {
+  const getPhoto = () => {
+    try {
+      return (
+        process.env.REACT_APP_PROFILE_PICTURE_URL + "/" + _.get(user, "photo")
+      );
+    } catch (error) {
+      return null;
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark justify-content-between fixed-top">
       <div>
@@ -38,14 +49,7 @@ const Navbar = ({ user }) => {
               <>
                 {" "}
                 <li className="nav-item d-flex ml-3 align-items-center">
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={
-                      process.env.REACT_APP_PROFILE_PICTURE_URL +
-                      "/" +
-                      user.photo
-                    }
-                  />
+                  <Avatar alt="Remy Sharp" src={getPhoto()} />
                   <NavLink to="/profile" className="nav-link">
                     {user.varsityId}
                   </NavLink>

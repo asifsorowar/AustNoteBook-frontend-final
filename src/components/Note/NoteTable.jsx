@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import _ from "lodash";
 import FadeIn from "react-fade-in";
 import MyTable from "../common/Table";
 import DeleteButton from "../common/DeleteButton";
@@ -13,7 +14,10 @@ class NoteTable extends Component {
       label: "Name",
       path: "name",
       content: (note) => {
-        if (note.user._id === getCurrentUser()._id || getCurrentUser().isAdmin)
+        if (
+          _.get(note, "user._id") === getCurrentUser()._id ||
+          getCurrentUser().isAdmin
+        )
           return (
             <Link
               to={`/aust-note-book/${this.props.batchId}/${this.props.courseId}/note/${note._id}`}
@@ -42,7 +46,8 @@ class NoteTable extends Component {
   deleteColumn = {
     key: "delete",
     content: (note) =>
-      (note.user._id === getCurrentUser()._id || getCurrentUser().isAdmin) && (
+      (_.get(note, "user._id") === getCurrentUser()._id ||
+        getCurrentUser().isAdmin) && (
         <DeleteButton
           handleClick={() => this.props.onDelete(note)}
           className="deleteButton"

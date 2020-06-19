@@ -21,8 +21,8 @@ class TeacherForm extends Component {
 
   validateSchema = Yup.object().shape({
     name: Yup.string().min(3).required().label("Name"),
-    courseTitle: Yup.string().required().label("Section"),
-    courseNo: Yup.string().required().label("Group"),
+    courseTitle: Yup.string().required().label("courseTitle"),
+    courseNo: Yup.string().required().label("courseNo"),
     email: Yup.string().email().required().label("Email"),
     phoneNumber: Yup.string().min(11).max(12).required().label("Phone No"),
   });

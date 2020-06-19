@@ -19,7 +19,7 @@ class QuestionForm extends Component {
   };
 
   validateSchema = Yup.object().shape({
-    name: Yup.string().min(3).required().label("First Name"),
+    name: Yup.string().min(3).required().label("Name"),
     semester: Yup.string()
       .min(3)
       .required()
@@ -27,7 +27,7 @@ class QuestionForm extends Component {
         /^(spring|fall)(-)(20)(\d\d)$/i,
         'Format have to "spring-xxxx" or "fall-xxxx"'
       )
-      .label("Last Name"),
+      .label("Semester"),
     url: Yup.string().required().label("Url"),
   });
 

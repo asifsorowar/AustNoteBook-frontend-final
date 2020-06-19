@@ -32,10 +32,23 @@ class Profile extends Component {
     }
   };
 
+  getPhoto = () => {
+    try {
+      return (
+        process.env.REACT_APP_PROFILE_PICTURE_URL +
+        "/" +
+        _.get(this.props.user, "photo")
+      );
+    } catch (error) {
+      return null;
+    }
+  };
+
   render() {
     if (!getCurrentUser()) return <Redirect to="/login" />;
 
     const { user } = this.props;
+
     return (
       <>
         <div className="row h-100 w-100 justify-content-center align-items-center p-0 m-0">
@@ -43,11 +56,7 @@ class Profile extends Component {
             <div className="registrationContainer">
               <div>
                 <img
-                  src={
-                    process.env.REACT_APP_PROFILE_PICTURE_URL +
-                    "/" +
-                    _.get(user, "photo")
-                  }
+                  src={this.getPhoto()}
                   className="rounded mx-auto d-block rounded-circle w-25 h-25"
                   alt="..."
                 ></img>
