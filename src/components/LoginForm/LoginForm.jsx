@@ -34,7 +34,6 @@ class LoginForm extends Component {
     if (getCurrentUser()) return <Redirect to="/" />;
     return (
       <>
-        <Navbar />
         <div className="row h-100 w-100 justify-content-center align-items-center p-0 m-0">
           <div className="col-8 row  p-0 m-0 justify-content-center align-items-center">
             <div className="loginContainer">
