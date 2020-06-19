@@ -10,8 +10,8 @@ import "./courseForm.css";
 
 class CourseForm extends Component {
   validateSchema = Yup.object().shape({
-    courseTitle: Yup.string().min(3).required().label("First Name"),
-    courseNo: Yup.string().min(3).required().label("Last Name"),
+    courseTitle: Yup.string().min(3).required().label("Course Title"),
+    courseNo: Yup.string().min(3).required().label("Course No"),
   });
 
   handleSubmit = async ({ courseTitle, courseNo }, { setErrors }) => {
