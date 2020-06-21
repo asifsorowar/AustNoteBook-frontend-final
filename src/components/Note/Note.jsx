@@ -98,20 +98,25 @@ class Note extends Component {
     const { courseId } = this.props.match.params;
     const originalComments = this.state.comments;
     try {
-      const currentUser = getCurrentUser();
-      const comments = [
-        {
-          _id: comment,
-          user: {
-            varsityId: currentUser.varsityId,
-            photo: currentUser.photo,
-          },
-          comment: comment,
-        },
-        ...originalComments,
-      ];
+      // const currentUser = getCurrentUser();
+      // const comments = [
+      //   {
+      //     _id: comment,
+      //     user: {
+      //       firstName: currentUser.firstName,
+      //       lastName: currentUser.lastName,
+      //       photo: currentUser.photo,
+      //     },
+      //     comment: comment,
+      //   },
+      //   ...originalComments,
+      // ];
+      // this.setState({ comments });
+      const { data } = await postComment(courseId, comment, "notes");
+      const comments = [{ ...data }, ...originalComments];
+
       this.setState({ comments });
-      await postComment(courseId, comment, "notes");
+
       resetForm({ values: "" });
     } catch (error) {
       this.setState({ comments: originalComments });

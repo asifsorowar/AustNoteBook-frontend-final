@@ -100,20 +100,25 @@ class Question extends Component {
     const { courseId } = this.props.match.params;
     const originalComments = this.state.comments;
     try {
-      const currentUser = getCurrentUser();
-      const comments = [
-        {
-          _id: comment,
-          user: {
-            varsityId: currentUser.varsityId,
-            photo: currentUser.photo,
-          },
-          comment: comment,
-        },
-        ...originalComments,
-      ];
+      // const currentUser = getCurrentUser();
+      // const comments = [
+      //   {
+      //     _id: comment,
+      //     user: {
+      //       firstName: currentUser.firstName,
+      //       lastName: currentUser.lastName,
+      //       photo: currentUser.photo,
+      //     },
+      //     comment: comment,
+      //   },
+      //   ...originalComments,
+      // ];
+      // this.setState({ comments });
+      const { data } = await postComment(courseId, comment, "questions");
+      const comments = [{ ...data }, ...originalComments];
+
       this.setState({ comments });
-      await postComment(courseId, comment, "questions");
+
       resetForm({ values: "" });
     } catch (error) {
       this.setState({ comments: originalComments });
@@ -191,7 +196,7 @@ class Question extends Component {
           />
         </div>
         {(getCurrentUser().batch === batchId || getCurrentUser().isAdmin) && (
-          <div className="col-lg-11 col-12 m-0 mt-3 p-lg-5 p-2 text-left">
+          <div className="col-lg-11 col-12 m-0 mt-3 p-5 text-left">
             <p className="text-white">Total Comments: {comments.length}</p>
             <Comment
               comments={comments}
