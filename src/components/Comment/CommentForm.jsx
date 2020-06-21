@@ -8,7 +8,7 @@ const CommentForm = ({ handleCommentSubmit }) => {
   });
 
   return (
-    <div className="p-5 bg-white" style={{ borderRadius: "5px" }}>
+    <div className="p-lg-5 p-3 bg-white" style={{ borderRadius: "5px" }}>
       <AppForm
         initialValues={{ comment: "" }}
         onSubmit={handleCommentSubmit}

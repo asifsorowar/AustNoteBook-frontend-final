@@ -23,7 +23,13 @@ const ShowComments = ({ comments, deleteButton, handleDelete }) => {
           <div className="d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center">
               <Avatar alt="Remy Sharp" src={getPhoto(comment)} />
-              <p className="text-muted">{_.get(comment, "user.varsityId")}</p>
+              <p className="text-muted">{`${_.get(
+                comment,
+                "user.firstName"
+              ).toLowerCase()} ${_.get(
+                comment,
+                "user.lastName"
+              ).toLowerCase()}`}</p>
             </div>
             <div>
               {deleteButton(comment) && (
