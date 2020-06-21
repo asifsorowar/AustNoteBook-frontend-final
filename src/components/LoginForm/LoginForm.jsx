@@ -4,7 +4,6 @@ import * as Yup from "yup";
 
 import { Input, SubmitButton, AppForm } from "../common/Form";
 import { login } from "../../service/authService";
-import Navbar from "../Navbar";
 import { getCurrentUser } from "../../service/authService";
 import "./login.css";
 import { toast } from "react-toastify";

@@ -9,7 +9,6 @@ import { getDepartments } from "../../service/departmentService";
 import { getBatchById } from "../../service/batchService";
 import { getCurrentUser } from "../../service/authService";
 import "./registration.css";
-import Navbar from "../Navbar";
 
 class RegistrationForm extends Component {
   state = {
