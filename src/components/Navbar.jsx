@@ -2,6 +2,7 @@ import React from "react";
 import _ from "lodash";
 import { NavLink } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
+import ViewListIcon from "@material-ui/icons/ViewList";
 
 const Navbar = ({ user }) => {
   const getPhoto = () => {
@@ -16,15 +17,13 @@ const Navbar = ({ user }) => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark justify-content-between fixed-top">
-      <div>
-        <NavLink to="/" className="nav-link text-white font-weight-bold">
-          <h5>AustNoteBook</h5>
-        </NavLink>
-      </div>
+      <NavLink to="/" className="navbar-brand text-white font-weight-bold">
+        <h5>AustNoteBook</h5>
+      </NavLink>
 
-      <div>
+      <div className="text-right">
         <button
-          className="navbar-toggler"
+          className="navbar-toggler ml-auto text-right"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -32,7 +31,7 @@ const Navbar = ({ user }) => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <ViewListIcon fontSize="large" />
         </button>
 
         <div

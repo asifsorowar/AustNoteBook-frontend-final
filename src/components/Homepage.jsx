@@ -30,7 +30,7 @@ const Homepage = () => {
     <div className="row h-100 w-100 justify-content-center align-items-center p-0 m-0">
       <div
         id="carouselExampleIndicators"
-        className="carousel slide col-8"
+        className="carousel slide col-lg-10 col-11"
         data-ride="carousel"
       >
         <ol className="carousel-indicators">

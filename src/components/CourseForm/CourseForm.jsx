@@ -39,7 +39,7 @@ class CourseForm extends Component {
       return (
         <>
           <div className="row h-100 w-100 justify-content-center align-items-center p-0 m-0">
-            <div className="col-8 row  p-0 m-0 justify-content-center align-items-center">
+            <div className="col-lg-8 col-12 row  p-0 m-0 justify-content-center align-items-center">
               <div className="courseContainer">
                 <div className="courseHeader">
                   <h3 className="m-0 p-0">Add Course</h3>
